@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-task-details',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './task-details.css',
 })
 export class TaskDetails {
-
+  route = inject(ActivatedRoute);
+  taskId = signal<number | null>(null);
+  constructor(){
+    const id = this.route.snapshot.paramMap.get('id');
+    if(id){
+      this.taskId.set(Number(id));
+    }
+  }
 }

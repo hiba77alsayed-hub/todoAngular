@@ -12,7 +12,7 @@ export interface Task{
   providedIn: 'root',
 })
 export class TaskService {
-  private tasksSignal = signal([
+  private tasksSignal = signal<Task[]>([
   {
     id: 1,
     title: "Review Pull Requests",
@@ -51,5 +51,9 @@ export class TaskService {
 ]);
 
   tasks = this.tasksSignal.asReadonly();
+
+  getTask( id: number){
+    return this.tasks().find(task => task.id === id)
+  }
 
 }
