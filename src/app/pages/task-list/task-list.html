@@ -2,10 +2,18 @@
     <div class="task-item">
         <div class="task-content">
             <h3>
-                <p>{{ task.title }}</p>
+                <a [routerLink]="['/task', task.id]">{{ task.title }}</a>
             </h3>
             <p>{{ task.description }}</p>
             <small>Created: {{ task.createdAt }}</small>
         </div>
     </div>
+
+    <!-- <div class="task-item" [routerLink]="['/task', task.id]">
+        <div class="task-content">
+            <h3>{{ task.title }}</h3> 
+            <p>{{ task.description }}</p>
+            <small>Created: {{ task.createdAt }}</small>
+        </div>
+    </div> -->
 }

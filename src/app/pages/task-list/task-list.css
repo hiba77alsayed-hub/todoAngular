@@ -29,19 +29,27 @@
     background: linear-gradient(to bottom, #38bdf8, #818cf8);
 }
 
-.task-content h3 p {
-    margin: 0;
+.task-content h3 a {
+    text-decoration: none; 
+    color: #f8fafc; 
     font-size: 1.25rem;
     font-weight: 600;
-    color: #f8fafc;
-    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: inline-block; 
 }
 
-.task-content p {
-    margin: 0.75rem 0;
-    color: #94a3b8;
+.task-content h3 a:hover {
+    color: #38bdf8; 
+    transform: translateX(5px);
+}
+
+.task-item {
+    cursor: pointer;
+}
+
+.task-content h3 {
+    margin: 0;
     line-height: 1.6;
-    font-size: 0.95rem;
 }
 
 .task-content small {
